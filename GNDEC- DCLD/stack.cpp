@@ -1,12 +1,12 @@
 #include<iostream>
-#define MAX 100
+#define MAX 15
 using namespace std;
 
 int stack[MAX];
 int top = -1;
 
 void push(int val) {
-    if (top >= MAX - 1) {
+    if (top == MAX - 1) {
         cout << "Stack Overflow" << endl;
     } else {
         top++;
@@ -14,33 +14,22 @@ void push(int val) {
     }
 }
 
-void pop() {
-    if (top <= -1) {
+int pop() {
+    if (top == -1) {
         cout << "Stack Underflow" << endl;
+        return -1;
     } else {
-        cout << "The popped element is " << stack[top] << endl;
+        int val = stack[top];
         top--;
-    }
-}
-
-void display() {
-    if (top >= 0) {
-        cout << "Stack elements are:";
-        for (int i = top; i >= 0; i--){
-            cout << stack[i] << " ";
-        }
-        cout << endl;
-    } else {
-        cout << "Stack is empty" << endl;
+        return val;
     }
 }
 
 int main() {
     push(10);
     push(20);
-    push(30);
-    display();
-    pop();
-    display();
+    cout << pop() << endl;
+    cout << pop() << endl;
+    cout << pop() << endl;
     return 0;
 }
