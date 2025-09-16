@@ -3,10 +3,11 @@ using namespace std;
 
 int main(){
     int n, x, b;
-    int a[n];
     
     cout << "Number of elements in the array: ";
     cin >> n;
+    
+    int a[n];
     
     for (int i = 0; i < n; i++){
         cout << "Enter element " << i + 1 << ": ";
